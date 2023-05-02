@@ -302,6 +302,7 @@ nav .hamburger{
     padding:10px;
 }
 .email{
+    margin-top:1.6rem;
     display: flex;
 }
 .send{
