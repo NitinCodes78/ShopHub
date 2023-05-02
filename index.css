@@ -287,9 +287,6 @@ body{
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
-    .categories{
-        
-    }
 }
 @media only screen and (max-width:550px){
     .categories{
