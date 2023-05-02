@@ -11,7 +11,6 @@ products.forEach(product=>product.addEventListener("mouseout",()=>{
      const images=product.querySelectorAll('.icon img');
      images.forEach(image=> image.style.display='none');
 }));
-
 /*``````````````NAVBAR````````````````````````*/
 const hamburger = document.querySelector('.hamburger');
 const navbar = document.querySelector('.navbar');
@@ -22,11 +21,9 @@ hamburger.addEventListener("click",function(){
     hamburger.classList.add('active');
 }
 );
-
 cross.addEventListener("click",function(){
     navbar.classList.remove('active');
     hamburger.classList.remove('active');
-
 }
 );
 /*``````````````SLIDER````````````````````````*/

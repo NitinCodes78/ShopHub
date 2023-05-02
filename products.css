@@ -1,0 +1,82 @@
+.products{
+    margin-top: 2.5rem;
+    display: grid;
+    grid-gap:0.75rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.product{
+    display: flex;
+    gap:0.5rem;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    flex-direction: row;
+    background-color: rgb(220, 241, 241);
+    height:25rem;
+}
+.icon img{
+    border-radius: 50%;
+    height: 2rem;
+    width:2rem;
+    padding:3px;
+    display: none;
+}
+#id-1{
+    background-image: url('https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png');
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    background-position: center center;  
+}
+#id-2{
+    background-image: url('Images/tshirt.png');
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    background-position: center center;  
+}
+#id-3{
+    background-image: url('https://www.prada.com/content/dam/pradanux_products/U/UCS/UCS319/1YOTF010O/UCS319_1YOT_F010O_S_182_SLF.png');
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    background-position: center center;  
+}
+#id-4{
+    background-image: url('Images/dress-removebg-preview.png');
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    background-position: center center;  
+}
+#id-5{
+    background-image: url('https://images.ctfassets.net/5gvckmvm9289/3BlDoZxSSjqAvv1jBJP7TH/65f9a95484117730ace42abf64e89572/Noissue-x-Creatsy-Tote-Bag-Mockup-Bundle-_4_-2.png');
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    background-position: center center;  
+}
+#id-6{
+    background-image: url('https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png');
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    background-position: center center;  
+}
+#id-7{
+    background-image: url('Images/jacket-removebg-preview.png');
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    background-position: center center;  
+}
+#id-8{
+    background-image: url('https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png');
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    background-position: center center;  
+}
+.price{
+     font-size:1.2rem;
+     display: none;
+     background-color: white;
+     position: absolute;
+     right:76%;
+     top:95%;
+     padding-left: 1rem;
+     padding-right: 1rem;
+}
