@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+:root{
+    --dark-green :#0E8388;
+}
+
+body{
+    font-family: 'Urbanist', sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.container{
+    padding-inline: min(10rem, 10vw);
+    background-color: aliceblue;
+}
+
+.items-table{
+    border: 1px solid black;
+}
+
+.cart-header{
+    background-color: var(--dark-green);
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 2rem ;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+
+}
+
+.items-list li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.items-list li .quantity input{
+    font-size: 25px;
+    font-family: 'Urbanist', sans-serif;
+    padding: 0.3rem;
+    text-align: center;
+    width: 60%;
+}
+
+.items-list li img{
+    height: 15rem;
+    align-items: center;
+}

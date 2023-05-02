@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="headerFooter.css">
+    <link rel="stylesheet" href="cart.css">
 
-    <title>ShopHub - Wishlist</title>
+    <title>ShopHub - Cart</title>
 </head>
 <body>
     <div class="header">Free Shipping On Orders Above Rs 10000 ! </div>
@@ -29,7 +30,38 @@
     </nav>
 
 
-    <footer>
+    <div class="container">
+        <h1 class="heading">Your CART!</h1>
+
+        <div class="items-table">
+            <div class="cart-header">
+                <div>Product</div>
+                <div>Price</div>
+                <div>Quantity</div>
+                <div>Total</div>
+            </div>
+
+            <ul class="items-list">
+                <li>
+                    <div class="img"><img src="/Images/Dresses/dress4.png" ></div>
+                    <div class="price">5000</div>
+                    <div class="quantity"><input type="number" min="1" value="1"></div>
+                    <div class="total-amt">25000</div>
+                </li>
+                
+            </ul>
+
+            <div class="cart-footer"></div>
+        </div>
+
+
+
+
+
+    </div>
+
+
+<!--     <footer>
         <div class="about">
             <div class="heading">SHOPHUB - where fashion meets convenience!</div>
             <div class="about-content">
@@ -73,8 +105,9 @@
                 </li>
             </ul>
         </div>
-    </footer>
+    </footer>  -->
     
     <script src="index.js"></script>
+    <script src="cart.js"></script>
 </body>
 </html>
