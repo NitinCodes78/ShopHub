@@ -362,3 +362,24 @@
      padding-left: 1rem;
      padding-right: 1rem;
 }
+
+/*Responsiveness*/
+@media only screen and (max-width:1300px){
+    .products{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .price{
+        font-size: 4vw;
+        position: absolute;
+        right:69%;
+        top:85%;
+    }
+    .icon img{
+        border-radius: 50%;
+        height: 4rem;
+        width:4rem;
+        padding:3px;
+        display: none;
+    }
+}
