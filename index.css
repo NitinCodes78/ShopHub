@@ -195,6 +195,7 @@ nav .hamburger{
     color:black;
     margin-left: 30px;
     margin-right: 30px;
+    font-size: min(1.25rem, 8vw);
 }
 
 /* CSS for PopularProducts */
