@@ -3,49 +3,40 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    
+    box-sizing: border-box;   
 }
-
 body{
     font-family: 'Urbanist', sans-serif;
     font-size: 25px;
     font-weight: 300;
     text-align: center;
 }
-
 :root{
     --dark-green :#0E8388;
 }
 
 /* /````````````````````SLIDES`````````````````````````/ */
-
 .slider{
     height: 85vh;
     position: relative;
     overflow: hidden;
 }
-
 .slide-btns div{
     position: absolute;
     top: 50%;
     z-index: 20;
 }
-
 .slide-btns div img{
     background-color: white;
     padding: 1.5rem;
     border-radius: 50%;
 }
-
 .slide-btns .previous{
     left: 2rem;
 }
-
 .slide-btns .next{
     right: 2rem;
 }
-
 .slide{
     display: flex;
     justify-content: center;
@@ -59,43 +50,35 @@ body{
     padding-inline: min(10rem, 10vw);
 
 }
-
 .slide img{
     height: 70vh;
 }
-
 .content{
     text-align: left;
 }
-
 .content .heading{
     font-weight: 600;
     font-size: 5rem;
 }
-
 .content .text-content{
     padding-block: 4rem;
     font-size: 1.5rem;
     font-weight: 500;
 }
-
 .content .shop-btn{
     border: 1px solid black;
     padding: 1rem;
     width: fit-content;
 }
-
 .slide-1{
     background-color: #f5fafd;
 }
 .slide-2{
     background-color: #fcf1ed;
 }
-
 .slide-3{
     background-color: #fbf0f4;
 }
-
 /* CSS for .categories */
 .categories{
     display: grid;
@@ -167,7 +150,6 @@ body{
     font-size: min(1.25rem, 8vw);
 
 }
-
 /* CSS for PopularProducts */
 .popularProducts{
     margin-top: 2.5rem;
@@ -285,10 +267,7 @@ body{
 @media only screen and (max-width:1300px){
     .popularProducts{
         display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-    .categories{
-        
+       grid-template-columns: 1fr 1fr;  
     }
 }
 @media only screen and (max-width:550px){

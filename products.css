@@ -70,6 +70,79 @@
     background-repeat:   no-repeat;
     background-position: center center;  
 }
+#id-9{
+    background-image: url('Images/Dresses/dress1.png');
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    background-position: center center;  
+}
+#id-10{
+    background-image: url('Images/Jeans/jean1.png');
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    background-position: center center;  
+}
+#id-11{
+    background-image: url('Images/LoungeWear/lw1.png');
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    background-position: center center;  
+}
+#id-12{
+    background-image: url('Images/Shirts/shirt1.png');
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    background-position: center center;  
+}
+#id-13{
+    background-image: url('Images/accessories/acc1.png');
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    background-position: center center;  
+}
+#id-14{
+    background-image: url('Images/jackets/jacket1.png');
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    background-position: center center;  
+}
+#id-15{
+    background-image: url('Images/accessories/acc2.png');
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    background-position: center center;  
+}
+#id-16{
+    background-image: url('Images/jackets/jacket2.png');
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    background-position: center center;  
+}
+#id-17{
+    background-image: url('Images/Jeans/jean2.png');
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    background-position: center center;  
+}
+#id-18{
+    background-image: url('Images/LoungeWear/lw2.png');
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    background-position: center center;  
+}
+#id-19{
+    background-image: url('Images/Dresses/dress2.png');
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    background-position: center center;  
+}
+#id-20{
+    background-image: url('Images/Shirts/shirt2.png');
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    background-position: center center;  
+}
+
 .price{
      font-size:1.2rem;
      display: none;
