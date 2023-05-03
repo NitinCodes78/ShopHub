@@ -18,7 +18,6 @@ populateList(cartItems, itemList);
 /*````````````````````QUANTITY X PRICE``````````````````````````` */
 
 const quanInputs = [...document.querySelectorAll('.quantity input')] ;
-console.log(quanInputs);
 
 quanInputs.forEach(input =>{
     input.addEventListener('change',(e)=>{
@@ -29,5 +28,31 @@ quanInputs.forEach(input =>{
         let totalAmount = target.querySelector('.total-amt');
         
         totalAmount.innerText =  `Rs ${price * quantity}`;
+        
+        
+        finalPrices.forEach(price => { 
+            const numericPrice = parseInt(price.textContent.slice(3));
+            numericPrices.push(numericPrice);
+            return numericPrices;    
+        })
+        
+        const numericSubtotal = numericPrices.reduce((sum,price)=> sum+price);
+        subtotal.innerText =  `Rs ${numericSubtotal}`;
     })
 })
+
+
+/*````````````````````SUBTOTAL```````````````````````````*/
+const finalPrices = [...document.querySelectorAll('.total-amt')];
+const subtotal = document.querySelector('.subtotal');
+const numericPrices = [];
+
+finalPrices.forEach(price => { 
+    const numericPrice = parseInt(price.textContent.slice(3));
+    numericPrices.push(numericPrice);
+    return numericPrices;    
+})
+
+const numericSubtotal = numericPrices.reduce((sum,price)=> sum+price);
+subtotal.innerText =  `Rs ${numericSubtotal}`;
+
