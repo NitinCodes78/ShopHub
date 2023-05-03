@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 const itemList = document.querySelector('ul.items-list');
 let cartItems = [];
+=======
+const itemList = document.querySelector('.items-list');
+let cartItems = JSON.parse(localStorage.getItem('CART-ITEMS')) || [];
+
+>>>>>>> f447163b6e3e60a861c6c7c952ed31d83d749e6c
 const cartIcons = [...document.querySelectorAll('.cart')];
 cartIcons.forEach(icon => {
     icon.addEventListener('click',(e)=>{
@@ -21,6 +27,7 @@ cartIcons.forEach(icon => {
 });
 function populateList(products, productList) {   //products will be an array of objects
     productList.innerHTML = products.map((product, i) => {
+<<<<<<< HEAD
         return 
         `<li>
           <div class="img"><img src=${product.bgImgUrl}></div>
@@ -30,3 +37,17 @@ function populateList(products, productList) {   //products will be an array of 
         </li>`
     }).join('');
 }
+=======
+        return `
+        <li>
+            <div class="img"><img src=${product.bgImgUrl}></div>
+            <div class="price">${product.price}</div>
+            <div class="quantity"><input type="number" min="1" value="1"></div>
+            <div class="total-amt">${product.price}</div>
+        </li> 
+        `;
+    }).join('');
+}
+
+populateList(cartItems, itemList)
+>>>>>>> f447163b6e3e60a861c6c7c952ed31d83d749e6c
