@@ -50,6 +50,7 @@ body{
     grid-template-columns: repeat(4,1fr);
     border-bottom: 1px solid black;
     padding-block: 0.5rem;
+    position: relative;
 
 }
 
@@ -66,6 +67,16 @@ body{
     align-items: center;
 }
 
+
+.items-list li .img .delete{
+    position: absolute;
+    top: 45%;
+    right: 2rem;
+    height: 1rem;
+} 
+
+
+
 .cart-footer{
     background-color: var(--dark-green);
     color: white;
@@ -73,5 +84,57 @@ body{
     padding: 0.5rem 2rem ;
     display: grid;
     grid-template-columns: 3fr 1fr;
+
+}
+/*`````````````````RESPONSIVENESS````````````````````*/
+
+@media only screen and (max-width : 970px){
+.cart-header{
+    grid-template-columns: repeat(2,1fr);
+}
+
+.header-price{
+    display: none;
+}
+
+.header-quantity{
+    display: none;
+}
+
+.container{
+    padding-inline: 5vw;
+}
+
+.items-list li{
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 1fr 0.5fr;
+    grid-template-areas: 
+    'product-img total-amt '
+    'quantity total-amt';
+    padding-inline: 0.5rem;  
+}
+
+.product-img{
+    grid-area: product-img;
+}
+.total-amt{
+    grid-area: total-amt;
+}
+.quantity{
+    grid-area: quantity;
+}
+
+.items-list li .price{ 
+    display: none;
+}
+
+.items-list li .img .delete{
+    top: 2rem;
+}
+
+.cart-footer{
+    grid-template-columns: repeat(2,1fr);
+}
+
 
 }
