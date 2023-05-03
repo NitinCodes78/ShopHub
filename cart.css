@@ -20,6 +20,7 @@ body{
 .container{
     padding-inline: min(10rem, 10vw);
     background-color: aliceblue;
+    padding-block: 2rem;
 }
 
 .items-table{
@@ -43,6 +44,9 @@ body{
     padding-inline: 2rem;
     display: grid;
     grid-template-columns: repeat(4,1fr);
+    border-bottom: 1px solid black;
+    padding-block: 0.5rem;
+
 }
 
 .items-list li .quantity input{
@@ -54,6 +58,6 @@ body{
 }
 
 .items-list li img{
-    height: 15rem;
+    height: 10rem;
     align-items: center;
 }
