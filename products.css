@@ -364,16 +364,17 @@
 }
 
 /*Responsiveness*/
-@media only screen and (max-width:1300px){
+@media only screen and (max-width:1200px){
     .products{
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
     }
     .price{
         font-size: 4vw;
         position: absolute;
-        right:69%;
-        top:85%;
+        right:55%;
+        top:86%;
+        display: block;
     }
     .icon img{
         border-radius: 50%;
@@ -383,3 +384,19 @@
         display: none;
     }
 }
+
+@media only screen and (max-width: 500px){
+    .products{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .price{
+        font-size: 4vw;
+        position: absolute;
+        right:51%;
+        top:86%;
+        display: block;
+    }  
+}
+
+
