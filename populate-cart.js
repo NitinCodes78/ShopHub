@@ -28,8 +28,10 @@ quanInputs.forEach(input =>{
         let totalAmount = target.querySelector('.total-amt');
         
         totalAmount.innerText =  `Rs ${price * quantity}`;
-        
-        
+
+
+/*``````````````SUBTOTAL after change in quantity```````````````*/
+        const numericPrices = [];
         finalPrices.forEach(price => { 
             const numericPrice = parseInt(price.textContent.slice(3));
             numericPrices.push(numericPrice);
