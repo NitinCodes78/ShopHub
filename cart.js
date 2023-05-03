@@ -1,4 +1,4 @@
-/* const itemList = document.querySelector('.items-list');
+const itemList = document.querySelector('.items-list');
 let cartItems = JSON.parse(localStorage.getItem('CART-ITEMS')) || [];
 
 const cartIcons = [...document.querySelectorAll('.cart')];
@@ -34,13 +34,13 @@ function populateList(products, productList) {   //products will be an array of 
     productList.innerHTML = products.map((product, i) => {
         return `
         <li>
-        <img src= ${product.bgImgUrl} >
-        <div class="cart-price">${product.price}</div>
-        </li>   
+            <div class="img"><img src=${product.bgImgUrl}></div>
+            <div class="price">${product.price}</div>
+            <div class="quantity"><input type="number" min="1" value="1"></div>
+            <div class="total-amt">${product.price}</div>
+        </li> 
         `;
     }).join('');
 }
 
 populateList(cartItems, itemList)
-
- */
