@@ -21,6 +21,7 @@
     width:3rem;
     padding:3px;
     display: none;
+    cursor: pointer;
 }
 .filters{
     display: flex;
