@@ -1,5 +1,4 @@
 const itemList = document.querySelector('.items-list');
-
 function populateList(products, productList) {   //products will be an array of objects
     productList.innerHTML = products.map((product, i) => {
         return `

@@ -22,6 +22,23 @@
     padding:3px;
     display: none;
 }
+.filters{
+    display: flex;
+    justify-content: space-between;
+}
+.filter1{
+    margin-left:2vw;
+}
+.filters label{
+    font-size:1.25rem;
+    font-weight: 600;
+}
+.filters select{
+    padding:.3rem;
+}
+.filter2{
+    margin-right: 2vw;
+}
 #id-1{
     background-image: url('https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png');
     background-size:     cover;                    
@@ -365,6 +382,11 @@
 
 /*Responsiveness*/
 @media only screen and (max-width:1300px){
+    .filter{
+        display: flex;
+        gap:0.3rem;
+        flex-direction: column;
+    }
     .products{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -386,6 +408,19 @@
 }
 
 @media only screen and (max-width:500px ){
+    .filters label{
+        font-size:1.05rem;
+    }
+    .filters select{
+        padding:.2rem .1rem;
+        font-size: 0.7rem;
+    }
+    .filter1 label{
+        margin-left: 0rem;
+    }
+    .filter2 label{
+        margin-right:0rem;
+    }
     .products{
         display: grid;
         grid-template-columns: 1fr 1fr;
