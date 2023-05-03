@@ -18,9 +18,12 @@ body{
 }
 
 .container{
-    padding-inline: min(10rem, 10vw);
+    padding: 2rem min(10rem, 10vw) 4rem min(10rem, 10vw);
     background-color: aliceblue;
-    padding-block: 2rem;
+}
+
+.container .heading{
+    padding-bottom: 1rem;
 }
 
 .items-table{
@@ -34,6 +37,7 @@ body{
     padding: 0.5rem 2rem ;
     display: grid;
     grid-template-columns: repeat(4,1fr);
+    border-bottom: 1px solid black;
 
 }
 
@@ -54,10 +58,20 @@ body{
     font-family: 'Urbanist', sans-serif;
     padding: 0.3rem;
     text-align: center;
-    width: 60%;
+    width: 50%;
 }
 
 .items-list li img{
     height: 10rem;
     align-items: center;
+}
+
+.cart-footer{
+    background-color: var(--dark-green);
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 2rem ;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+
 }
