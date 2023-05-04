@@ -409,8 +409,8 @@
     }
     .icon img{
         border-radius: 50%;
-        height: 3.5rem;
-        width:3.5rem;
+        height: 3.25rem;
+        width:3.25rem;
         padding:3px;
         display: none;
     }
@@ -446,8 +446,8 @@
     }  
     .icon img{
         border-radius: 50%;
-        height: 3.25rem;
-        width:3.25rem;
+        height: 2.75rem;
+        width:2.75rem;
         padding:3px;
         display: none;
     }
