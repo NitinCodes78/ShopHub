@@ -8,7 +8,16 @@ function populateList(products, productList) {   //products will be an array of 
                 <img src="/images/icons/icon-close.svg" class="delete">
             </div>
             <div class="price">₹ ${product.price}</div>
-            <div class="quantity"> <input type="number" min="1" value="1"> </div>
+            <div class = "quanSize">
+                <div class="quantity"> <input type="number" min="1" value="1"> </div>
+                <select name="size">
+                    <option value="small">S</option>
+                    <option value="medium">M</option>
+                    <option value="large">L</option>
+                    <option value="xl">XL</option>
+                    <option value="xxl">XXL</option>
+                </select>
+            </div>
             <div class="total-amt">₹ ${product.price}</div>
         </li> 
         `;
