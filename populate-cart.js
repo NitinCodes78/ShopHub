@@ -50,6 +50,10 @@ const subtotal = document.querySelector('.subtotal');
 
 function computeSubtotal(){
 const numericPrices=[];
+if(finalPrices.length<1){
+    subtotal.innerText =  ``; 
+    return;  
+}
 finalPrices.forEach(price => {
     const numericPrice = parseInt(price.textContent.slice(2));
     numericPrices.push(numericPrice);
@@ -64,20 +68,33 @@ computeSubtotal()
 
 /*`````JS For remove button( removing item from the cart)`````````*/
 
-const removeList=document.querySelectorAll('.delete');
-const removeArray=Array.from(removeList);
-removeArray.forEach(remove => {
-        remove.addEventListener("click", (e)=>{
-               const grandParent=e.target.parentElement.parentElement;
-               const imgUrl=grandParent.querySelector('.img .product-img').src;
-               const removeIndex=cartItems.findIndex(item=>{
-                      return item.bgImgUrl==imgUrl;
-               });
-               cartItems.splice(removeIndex,1);
-               localStorage.setItem('CART-ITEMS', JSON.stringify(cartItems));
-               populateList(cartItems,itemList);
-               finalPrices=[...document.querySelectorAll('.total-amt')];
-               computeSubtotal();
+function removeItem(e){
+        const grandParent=e.target.parentElement.parentElement;
+        const imgUrl=grandParent.querySelector('.img .product-img').src;
+        const removeIndex=cartItems.findIndex(item=>{
+               return item.bgImgUrl==imgUrl;
         });
-});
+        cartItems.splice(removeIndex,1);
+        localStorage.setItem('CART-ITEMS', JSON.stringify(cartItems));
+        populateList(cartItems,itemList);
+        finalPrices=[...document.querySelectorAll('.total-amt')];
+        computeSubtotal();
+
+        /******Still doubt on why********** */
+        /****I think it's because when we add or remove elements in the removeList, then the event listener associated with it is affected, in the case of products, we are just adding to the cart, and not adding/removing any product from the product lists */
+        const removeList=document.querySelectorAll('.delete');
+        const removeArray=Array.from(removeList);
+        removeArray.forEach(remove => {
+             remove.addEventListener("click", removeItem);
+        });
+    }
+
+    const removeList=document.querySelectorAll('.delete');
+    const removeArray=Array.from(removeList);
+    removeArray.forEach(remove => {
+         remove.addEventListener("click", removeItem);
+    });
+
+
+
 

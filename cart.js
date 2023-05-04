@@ -10,12 +10,14 @@ cartIcons.forEach(icon => {
         const productId = targetProduct.id;
         const price = parseInt(targetProduct.dataset.price);
         const styles = window.getComputedStyle(targetProduct, false);
+        const type=targetProduct.dataset.type;
         const bgImgUrl = styles.backgroundImage.slice(4, -1).replace(/"/g, "");
 
-        const newItem = {
+        const newItem ={
             productId,
             bgImgUrl,
-            price
+            price,
+            type
         };
         cartItems.push(newItem);
         localStorage.setItem('CART-ITEMS', JSON.stringify(cartItems));   
