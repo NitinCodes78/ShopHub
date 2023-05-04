@@ -16,7 +16,6 @@ function populateList(products, productList) {   //products will be an array of 
 }
 populateList(cartItems, itemList);
 
-
 /*````````````````````QUANTITY X PRICE``````````````````````````` */
 
 const quanInputs = [...document.querySelectorAll('.quantity input')] ;
@@ -27,7 +26,7 @@ quanInputs.forEach(input =>{
 
         const quantity = parseInt(input.value) ;
         let price = parseInt(target.querySelector('.price').innerText.slice(2));
-        let totalAmount = target.querySelector('.total-amt');
+        let totalAmount = target.querySelector('.total-amt');        
         
         totalAmount.innerText =  `₹ ${price * quantity}`;
 
@@ -35,14 +34,14 @@ quanInputs.forEach(input =>{
         computeSubtotal() 
     })
 })
-const finalPrices = [...document.querySelectorAll('.total-amt')];
+let finalPrices = [...document.querySelectorAll('.total-amt')];
 const subtotal = document.querySelector('.subtotal');
 
 /*````````````````````SUBTOTAL```````````````````````````*/
 
 function computeSubtotal(){
 const numericPrices=[];
-finalPrices.forEach(price => { 
+finalPrices.forEach(price => {
     const numericPrice = parseInt(price.textContent.slice(2));
     numericPrices.push(numericPrice);
     return numericPrices;    
@@ -53,3 +52,23 @@ subtotal.innerText =  `₹ ${numericSubtotal}`;
 
 }
 computeSubtotal()
+
+/*`````JS For remove button( removing item from the cart)`````````*/
+
+const removeList=document.querySelectorAll('.delete');
+const removeArray=Array.from(removeList);
+removeArray.forEach(remove => {
+        remove.addEventListener("click", (e)=>{
+               const grandParent=e.target.parentElement.parentElement;
+               const imgUrl=grandParent.querySelector('.img .product-img').src;
+               const removeIndex=cartItems.findIndex(item=>{
+                      return item.bgImgUrl==imgUrl;
+               });
+               cartItems.splice(removeIndex,1);
+               localStorage.setItem('CART-ITEMS', JSON.stringify(cartItems));
+               populateList(cartItems,itemList);
+               finalPrices=[...document.querySelectorAll('.total-amt')];
+               computeSubtotal();
+        });
+});
+
