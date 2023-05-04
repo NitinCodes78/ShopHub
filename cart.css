@@ -54,12 +54,26 @@ body{
 
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
 .items-list li .quantity input{
-    font-size: 25px;
+    font-size: 22px;
     font-family: 'Urbanist', sans-serif;
-    padding: 0.3rem;
+    padding: 0.1rem;
     text-align: center;
     width: 50%;
+}
+
+.items-list li select{
+    font-size: 22px;
+    font-family: 'Urbanist', sans-serif;
+    padding: 0.1rem;
+    text-align: center;
+    width: 50%;
+    margin-top: 1rem;
 }
 
 .items-list li img{
@@ -90,6 +104,10 @@ body{
 /*`````````````````RESPONSIVENESS````````````````````*/
 
 @media only screen and (max-width : 970px){
+.header{
+    font-size: 1.2rem;
+}
+
 .cart-header{
     grid-template-columns: repeat(2,1fr);
 }
@@ -104,6 +122,10 @@ body{
 
 .container{
     padding-inline: 5vw;
+    font-size: 18px;
+}
+.container .heading{
+    font-size: 2rem;
 }
 
 .items-list li{
@@ -113,6 +135,18 @@ body{
     'product-img total-amt '
     'quantity total-amt';
     padding-inline: 0.5rem;  
+}
+
+.items-list li .quanSize{
+    display: flex;
+}
+
+.items-list li .quantity input{
+    font-size: 16px;
+}
+.items-list li select{
+    margin-top: 0;
+    font-size: 16px;
 }
 
 .product-img{
