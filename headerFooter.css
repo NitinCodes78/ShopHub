@@ -28,6 +28,20 @@ nav{
     align-items: center;
     height: 10vh;
     padding-inline: min(10rem, 10vw);
+    background-color: white;
+}
+
+body.fixed-nav .header {
+    position: fixed;
+    top: 0;
+    z-index: 50;
+    width: 100vw;
+}
+
+body.fixed-nav nav {
+    position: fixed;
+    z-index: 50;
+    width: 100vw;
 }
 
 nav .name{
