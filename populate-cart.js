@@ -1,4 +1,24 @@
 const itemList = document.querySelector('.items-list');
+
+function ifEmpty(){
+    if(cartItems.length == 0){
+        itemList.textContent = 'Oops! your cart is empty. Add your favourite products to cart !';
+        itemList.classList.add('empty-cart');
+        document.querySelector('.cart-footer').classList.add('empty-cart');
+    
+    } 
+    else{
+        itemList.classList.remove('empty-cart');
+        document.querySelector('.cart-footer').classList.remove('empty-cart');
+        populateList(cartItems, itemList);
+    }
+
+}
+
+ifEmpty();
+
+ 
+
 function populateList(products, productList) {   //products will be an array of objects
     productList.innerHTML = products.map((product, i) => {
         return `
@@ -23,7 +43,7 @@ function populateList(products, productList) {   //products will be an array of 
         `;
     }).join('');
 }
-populateList(cartItems, itemList);
+
 
 /*````````````````````QUANTITY X PRICE``````````````````````````` */
 
@@ -76,9 +96,11 @@ function removeItem(e){
         });
         cartItems.splice(removeIndex,1);
         localStorage.setItem('CART-ITEMS', JSON.stringify(cartItems));
+        
         populateList(cartItems,itemList);
         finalPrices=[...document.querySelectorAll('.total-amt')];
         computeSubtotal();
+        ifEmpty();
 
         /******Still doubt on why********** */
         /****I think it's because when we add or remove elements in the removeList, then the event listener associated with it is affected so, we have to initialise the event listener again while in the case of products, we are just adding to the cart, and not adding/removing any product from the product lists*/
@@ -87,6 +109,7 @@ function removeItem(e){
         removeArray.forEach(remove => {
              remove.addEventListener("click", removeItem);
         });
+        
     }
     
     const removeList=document.querySelectorAll('.delete');

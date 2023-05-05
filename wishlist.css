@@ -1,6 +1,6 @@
 .wishlist{
     background-color: #fbf0f4;
-    padding: 2rem min(8rem, 8vw);
+    padding: 2rem min(8rem, 8vw) 5rem min(8rem, 8vw);
 }
 
 .wishlist h1{
@@ -46,4 +46,23 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
+}
+
+/*``````````````````TABLET DESIGN`````````````````````````*/
+@media only screen and (max-width: 1200px){
+
+    .my-favourites{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
+
+/*``````````````````MOBILE DESIGN`````````````````````````*/
+@media only screen and (max-width: 7300px){
+
+    .my-favourites{
+        grid-template-columns: 1fr;
+        grid-gap: 2.5rem;
+    }
+
 }

@@ -90,8 +90,6 @@ input[type=number]::-webkit-outer-spin-button {
     cursor:pointer;
 } 
 
-
-
 .cart-footer{
     background-color: var(--dark-green);
     color: white;
@@ -100,6 +98,15 @@ input[type=number]::-webkit-outer-spin-button {
     display: grid;
     grid-template-columns: 3fr 1fr;
 
+}
+
+.items-list.empty-cart{
+    font-size: max(2rem,3vw) ;
+    padding:10rem 2rem;
+}
+
+.cart-footer.empty-cart{
+    display: none;
 }
 /*`````````````````RESPONSIVENESS````````````````````*/
 
