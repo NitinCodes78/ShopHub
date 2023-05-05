@@ -42,25 +42,47 @@ const slideImage = () =>{
 })
 }
 
-/**********************Shop Now Buttons Functionality*************** */
+/**********************ShopNow Buttons Functionality*************** */
 
 /**Slides Button**/
 const slide1Button=document.querySelector('.slide-1 .shop-btn');  //All Products
 const slide2Button=document.querySelector('.slide-2 .shop-btn');  //Jackets
 const slide3Button=document.querySelector('.slide-3 .shop-btn');  //LoungeWear
-
-function funcSlide1Button(){
-    window.open("products.html","_self");
-}
-function funcSlide2Button(){
-   
-}
-slide1Button.addEventListener("click", funcSlide1Button);
-slide2Button.addEventListener("click",funcSlide2Button);
-
 /**Categories Button**/
 const shirtButton=document.querySelector('.shirtStyle .shopNow');
 const loungewearButton=document.querySelector('.loungewearLove .shopNow');
 const jacketButton=document.querySelector('.lightJackets .shopNow');
 const dressButton=document.querySelector('.newDresses .shopNow');
 const jeanButton=document.querySelector('.thePerfectJeans .shopNow');
+function funcShowAll(){
+    window.open("products.html","_self");
+    localStorage.setItem("type", 'all');
+}
+function funcShirtButton(){
+    window.open("products.html","_self");
+    localStorage.setItem("type", 'shirt');
+}
+function funcLoungewearButton(){
+    window.open("products.html","_self");
+    localStorage.setItem("type", 'loungewear');
+}
+function funcJacketButton(){
+    window.open("products.html","_self");
+    localStorage.setItem("type", 'jacket');
+}
+function funcDressButton(){
+    window.open("products.html","_self");
+    localStorage.setItem("type", 'dress');
+}
+function funcJeanButton(){
+    window.open("products.html","_self");
+    localStorage.setItem("type", 'jean');
+}
+slide1Button.addEventListener("click", funcShowAll);
+slide2Button.addEventListener("click",funcJacketButton);
+slide3Button.addEventListener("click",funcLoungewearButton);
+shirtButton.addEventListener("click",funcShirtButton);
+loungewearButton.addEventListener("click",funcLoungewearButton);
+jacketButton.addEventListener("click",funcJacketButton);
+dressButton.addEventListener("click",funcDressButton);
+jeanButton.addEventListener("click",funcJeanButton);

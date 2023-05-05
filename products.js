@@ -57,7 +57,6 @@ function sortNewest(){ //Sort according to the id(assuming it for the newest)
      var pricesArray=Array.from(prices);
      let sorted=pricesArray.sort(comparatorNewest);
      pricesArray.forEach(x=>document.querySelector('.products').appendChild(x)); 
-
 }
 /********************Event Listener for sorting according to price********* */
 const filter2=document.querySelector('.filter2');
@@ -71,3 +70,65 @@ function funcFilter2(){
      else 
        sortNewest();
 }
+
+/********************Filter for displaying only specific type************* */
+ function filterAll(){
+     products.forEach(product=>product.style.display='flex');
+ }
+ function filterShirts(){
+     products.forEach(product=>{
+        if(product.dataset.type==='shirt')
+            product.style.display='flex';
+        else 
+            product.style.display='none';
+     });
+ }
+ function filterLoungeWear(){
+     products.forEach(product=>{
+        if(product.dataset.type==='loungewear')
+            product.style.display='flex';
+        else 
+            product.style.display='none';
+     });
+ }
+ function filterJackets(){
+     products.forEach(product=>{
+        if(product.dataset.type==='jacket')
+            product.style.display='flex';
+        else 
+            product.style.display='none';
+     });
+ }
+ function filterDresses(){
+     products.forEach(product=>{
+        if(product.dataset.type==='dress')
+            product.style.display='flex';
+        else 
+            product.style.display='none';
+     });
+ }
+ function filterJeans(){
+     products.forEach(product=>{
+        if(product.dataset.type==='jean')
+            product.style.display='flex';
+        else 
+            product.style.display='none';
+     });
+ }
+
+/******What to show when the product page loads****** */
+ let type=localStorage.getItem('type');
+ displayType();
+
+ function displayType(){
+   if(type==='shirt')
+     filterShirts();  
+   else if(type==='loungewear')
+     filterLoungeWear();
+   else if(type==='jacket')
+     filterJackets();
+   else if(type==='dress')
+     filterDresses();
+   else if(type==='jean')
+     filterJeans();
+ }
