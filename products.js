@@ -64,6 +64,7 @@ const filter2=document.querySelector('.filter2');
 filter2.addEventListener("change", funcFilter2);
 function funcFilter2(){
      const value=document.querySelector('.filter2 select').value;
+     localStorage.setItem('filter2',value);
      if(value==='asc')
        sortAscending();
      else if(value==='dec')
@@ -77,6 +78,7 @@ const filter1=document.querySelector('.filter1');
 filter1.addEventListener("change",funcFilter1);
 function funcFilter1(){
      const value=document.querySelector('.filter1 select').value;
+     localStorage.setItem('color',value);
      products.forEach(product=>{
           if(value==='all'){
                if(type==='all'){
@@ -103,64 +105,34 @@ function funcFilter1(){
           }
          });
 }
-/********************Filter for displaying only specific type************* */
+
+/********************************What to show when the product page loads************************** */
+
+/***For Product Type***/
+ let type=localStorage.getItem('type');
+ displayType();
  function filterAll(){
      products.forEach(product=>product.style.display='flex');
  }
- function filterShirts(){
-     products.forEach(product=>{
-        if(product.dataset.type==='shirt')
-            product.style.display='flex';
-        else 
-            product.style.display='none';
-     });
- }
- function filterLoungeWear(){
-     products.forEach(product=>{
-        if(product.dataset.type==='loungewear')
-            product.style.display='flex';
-        else 
-            product.style.display='none';
-     });
- }
- function filterJackets(){
-     products.forEach(product=>{
-        if(product.dataset.type==='jacket')
-            product.style.display='flex';
-        else 
-            product.style.display='none';
-     });
- }
- function filterDresses(){
-     products.forEach(product=>{
-        if(product.dataset.type==='dress')
-            product.style.display='flex';
-        else 
-            product.style.display='none';
-     });
- }
- function filterJeans(){
-     products.forEach(product=>{
-        if(product.dataset.type==='jean')
-            product.style.display='flex';
-        else 
-            product.style.display='none';
-     });
- }
-
-/******What to show when the product page loads****** */
- let type=localStorage.getItem('type');
- displayType();
-
  function displayType(){
-   if(type==='shirt')
-     filterShirts();  
-   else if(type==='loungewear')
-     filterLoungeWear();
-   else if(type==='jacket')
-     filterJackets();
-   else if(type==='dress')
-     filterDresses();
-   else if(type==='jean')
-     filterJeans();
+     products.forEach(product=>{
+          if(product.dataset.type==='all'){
+               filterAll();
+               return;
+          }
+          if(product.dataset.type===type)
+              product.style.display='flex';
+          else 
+              product.style.display='none';
+       });
  }
+
+/***For color(Unaffected by Refresh)***/ /****Saves the color the customer the last time****/
+ const color=localStorage.getItem('color') || 'all'; //If localStorage is empty, then it will take 'all'
+ document.querySelector('.filter1 #color').value=color;
+ funcFilter1();
+
+ /***For Price sorting(Unaffected by refresh)***/ /****Saves the sort customer used last time**** */
+ const sort=localStorage.getItem('filter2') || 'newest';
+ document.querySelector('.filter2 #Products').value=sort;
+ funcFilter2();
