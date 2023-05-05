@@ -1,5 +1,4 @@
-console.log("Nitin Goyal");
-const popularProducts=document.querySelectorAll('.popularProduct');
+const popularProducts=document.querySelectorAll('.product');
 popularProducts.forEach(popularProduct=>popularProduct.addEventListener("mouseover",()=>{
      popularProduct.style.opacity='0.75';
      popularProduct.style.backgroundColor='grey';
