@@ -31,7 +31,7 @@ const quanInputs = [...document.querySelectorAll('.quantity input')] ;
 
 quanInputs.forEach(input =>{
     input.addEventListener('change',(e)=>{
-        const target = e.target.parentElement.parentElement;
+        const target = e.target.parentElement.parentElement.parentElement;
 
         const quantity = parseInt(input.value) ;
         let price = parseInt(target.querySelector('.price').innerText.slice(2));
