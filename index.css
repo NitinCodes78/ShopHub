@@ -82,6 +82,7 @@ body{
     border: 1px solid black;
     padding: 1rem;
     width: fit-content;
+    cursor:pointer;
 }
 
 .slide-1{
@@ -114,8 +115,9 @@ body{
     font-size: 1.75rem;
     font-weight: 900;
 }
-.catg button{
+.catg .shopNow{
     padding: 11px 6px;
+    cursor: pointer;
 }
 .shirtStyle{
     grid-area: 1/1/2/3;

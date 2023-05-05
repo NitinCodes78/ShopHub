@@ -81,14 +81,14 @@ function removeItem(e){
         computeSubtotal();
 
         /******Still doubt on why********** */
-        /****I think it's because when we add or remove elements in the removeList, then the event listener associated with it is affected, in the case of products, we are just adding to the cart, and not adding/removing any product from the product lists */
+        /****I think it's because when we add or remove elements in the removeList, then the event listener associated with it is affected so, we have to initialise the event listener again while in the case of products, we are just adding to the cart, and not adding/removing any product from the product lists*/
         const removeList=document.querySelectorAll('.delete');
         const removeArray=Array.from(removeList);
         removeArray.forEach(remove => {
              remove.addEventListener("click", removeItem);
         });
     }
-
+    
     const removeList=document.querySelectorAll('.delete');
     const removeArray=Array.from(removeList);
     removeArray.forEach(remove => {
