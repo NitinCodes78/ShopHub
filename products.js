@@ -58,6 +58,7 @@ function sortNewest(){ //Sort according to the id(assuming it for the newest)
      let sorted=pricesArray.sort(comparatorNewest);
      pricesArray.forEach(x=>document.querySelector('.products').appendChild(x)); 
 }
+
 /********************Event Listener for sorting according to price********* */
 const filter2=document.querySelector('.filter2');
 filter2.addEventListener("change", funcFilter2);
@@ -71,6 +72,37 @@ function funcFilter2(){
        sortNewest();
 }
 
+/************Event Listener for Showing specific color products********** */
+const filter1=document.querySelector('.filter1');
+filter1.addEventListener("change",funcFilter1);
+function funcFilter1(){
+     const value=document.querySelector('.filter1 select').value;
+     products.forEach(product=>{
+          if(value==='all'){
+               if(type==='all'){
+                    product.style.display='flex';
+               }
+               else{
+                 if(product.dataset.type===type)
+                    product.style.display='flex';
+                 else 
+                    product.style.display='none';
+               }
+               return;
+          }
+          if(type==='all'){
+             if(product.dataset.color===value)
+               product.style.display='flex';
+             else 
+               product.style.display='none';
+          }else{
+             if(product.dataset.type===type && product.dataset.color===value)
+               product.style.display='flex';
+             else 
+               product.style.display='none';
+          }
+         });
+}
 /********************Filter for displaying only specific type************* */
  function filterAll(){
      products.forEach(product=>product.style.display='flex');
