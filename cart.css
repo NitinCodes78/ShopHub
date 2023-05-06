@@ -100,13 +100,23 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 
-.items-list.empty-cart{
-    font-size: max(2rem,3vw) ;
-    padding:10rem 2rem;
+.empty-cart{
+    border: 3px solid white;
+    padding: 8rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
 }
 
-.cart-footer.empty-cart{
-    display: none;
+
+.empty-cart .shop-now{
+    border: 1px solid black;
+    width: fit-content;
+    padding: 1rem;
+    margin-top: 2rem;
+
 }
 /*`````````````````RESPONSIVENESS````````````````````*/
 

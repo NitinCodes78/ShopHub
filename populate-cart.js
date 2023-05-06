@@ -1,23 +1,20 @@
 const itemList = document.querySelector('.items-list');
+const cartTable = document.querySelector('.items-table');
+const emptycart = document.querySelector('.empty-cart');
 
 function ifEmpty(){
     if(cartItems.length == 0){
-        itemList.textContent = 'Oops! your cart is empty. Add your favourite products to cart !';
-        itemList.classList.add('empty-cart');
-        document.querySelector('.cart-footer').classList.add('empty-cart');
-    
+        emptycart.style.display = 'flex';    
+        cartTable.style.display = 'none';    
     } 
     else{
-        itemList.classList.remove('empty-cart');
-        document.querySelector('.cart-footer').classList.remove('empty-cart');
+        emptycart.style.display = 'none';    
+        cartTable.style.display = 'block';   
         populateList(cartItems, itemList);
     }
-
 }
 
 ifEmpty();
-
- 
 
 function populateList(products, productList) {   //products will be an array of objects
     productList.innerHTML = products.map((product, i) => {
@@ -100,6 +97,7 @@ function removeItem(e){
         populateList(cartItems,itemList);
         finalPrices=[...document.querySelectorAll('.total-amt')];
         computeSubtotal();
+
         ifEmpty();
 
         /******Still doubt on why********** */

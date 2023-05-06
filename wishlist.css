@@ -48,6 +48,25 @@
     right: 1rem;
 }
 
+.empty-wishlist{
+    border: 3px solid white;
+    padding: 8rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+
+.empty-wishlist .shop-now{
+    border: 1px solid black;
+    width: fit-content;
+    padding: 1rem;
+    margin-top: 2rem;
+
+}
+
 /*``````````````````TABLET DESIGN`````````````````````````*/
 @media only screen and (max-width: 1200px){
 
@@ -58,7 +77,7 @@
 }
 
 /*``````````````````MOBILE DESIGN`````````````````````````*/
-@media only screen and (max-width: 7300px){
+@media only screen and (max-width: 730px){
 
     .my-favourites{
         grid-template-columns: 1fr;
