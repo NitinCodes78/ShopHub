@@ -67,6 +67,11 @@
 
 }
 
+.empty-wishlist a{
+    text-decoration: none;
+    color: black;
+}
+
 /*``````````````````TABLET DESIGN`````````````````````````*/
 @media only screen and (max-width: 1200px){
 
