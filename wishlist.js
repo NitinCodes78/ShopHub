@@ -3,6 +3,9 @@ let favItems = JSON.parse(localStorage.getItem('FAVOURITES')) || [];
 
 hrtIcons.forEach(icon => {
     icon.addEventListener('click',(e)=>{
+        e.target.src = 'Images/red-heart.png';
+/*         e.target.parentElement.classList.add('fav');
+        console.log(e.target.parentElement); */
         e.preventDefault;
         let targetProduct = e.target.parentElement.parentElement;
 
@@ -23,5 +26,6 @@ hrtIcons.forEach(icon => {
         
     })
 });
+
 
 

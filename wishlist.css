@@ -39,6 +39,12 @@
     padding: 0.5rem;
     border-radius: 0.5rem;
     font-size: 1rem;
+    cursor: pointer;
+}
+
+.add-btn:hover{
+    background-color: black;
+    color: white;
 }
 
 .my-favourites li .remove-fav img{
@@ -46,6 +52,7 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
+    cursor: pointer;
 }
 
 .empty-wishlist{
@@ -64,6 +71,13 @@
     width: fit-content;
     padding: 1rem;
     margin-top: 2rem;
+    cursor: pointer;
+
+}
+
+.empty-wishlist .shop-now:hover{
+    background-color: black;
+    color: white;
 
 }
 

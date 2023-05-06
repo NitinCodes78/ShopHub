@@ -31,6 +31,10 @@ body{
     z-index: 20;
 }
 
+.slide-btns div:hover{
+    scale: 1.5;
+}
+
 .slide-btns div img{
     background-color: white;
     padding: 1.5rem;
@@ -85,6 +89,11 @@ body{
     cursor:pointer;
 }
 
+.content .shop-btn:hover{
+    background-color: black;
+    color: white;
+}
+
 .slide-1{
     background-color: #f5fafd;
 }
@@ -95,6 +104,10 @@ body{
 .slide-3{
     background-color: #fbf0f4;
 }
+
+/* .heart.fav {
+    content: url("Images/red-heart.png");
+} */
 
 /* CSS for .categories */
 .categories{
@@ -118,6 +131,15 @@ body{
 .catg .shopNow{
     padding: 11px 6px;
     cursor: pointer;
+    background-color: white;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.catg .shopNow:hover{
+    scale: 1.2;
+    background-color: black;
+    color: white;
 }
 .shirtStyle{
     grid-area: 1/1/2/3;
