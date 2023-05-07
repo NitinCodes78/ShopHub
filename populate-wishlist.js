@@ -22,7 +22,7 @@ function populateWishList(products, productList) {
             <div class="remove-fav"><img src="/Images/icons/icon-close.svg" alt=""></div>
 
             <div class="fav-img">
-            <img src=${product.bgImgUrl}></div>
+                <img src=${product.bgImgUrl}></div>
             <div class="details">
                 <div class="favprice">₹ ${product.price}</div>
                 <div class="add-btn">Add to Cart <i class="fa-solid fa-cart-shopping"></i></div>
@@ -33,9 +33,47 @@ function populateWishList(products, productList) {
 }
 populateWishList(favItems, favList);
 
+
+/*`````````````````````````````````FAV TO CART``````````````````````````````````````````````` */
+const favToCartBtns = [...document.querySelectorAll('.add-btn')];
+
+favToCartBtns.forEach(btn=>{
+    btn.addEventListener('click',(e)=>{
+        e.preventDefault;        
+        let grandParent = e.target.parentElement.parentElement;
+
+        const imgUrl = grandParent.querySelector('.fav-img img').src;
+        const removeIndex = favItems.findIndex(item=>{
+               return item.bgImgUrl==imgUrl;
+        });
+
+        const newItem ={
+            productId : favItems[removeIndex].productId ,
+            bgImgUrl :favItems[removeIndex].bgImgUrl,
+            price : favItems[removeIndex].price,
+            type : favItems[removeIndex].type
+        };
+
+        cartItems.push(newItem);
+        localStorage.setItem('CART-ITEMS', JSON.stringify(cartItems));
+
+        removeFav(e);
+
+/*      favItems.splice(removeIndex,1);
+        localStorage.setItem('FAVOURITES', JSON.stringify(favItems));
+        populateWishList(favItems, favList);
+        ifEmptywishlist(); */
+
+/*      const removeIcons = [...document.querySelectorAll('.remove-fav')];
+        removeIcons.forEach(icon => {
+        icon.addEventListener("click", removeFav); */
+        
+    })
+});
+
+
+
 /*````````````````````````````````````````````````````````````````````````````````````````` */
-
-
 function removeFav(e){
     const grandParent=e.target.parentElement.parentElement;
     const imgUrl=grandParent.querySelector('.fav-img img').src;
@@ -60,3 +98,4 @@ const removeIcons = [...document.querySelectorAll('.remove-fav')];
 removeIcons.forEach(icon => {
      icon.addEventListener("click", removeFav);
 });
+
