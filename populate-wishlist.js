@@ -61,14 +61,16 @@ function favouriteCartAdd(e){
 /*````````````````````````````````````````````````````````````````````````````````````````` */
 function removeFav(e){
     const grandParent=e.target.parentElement.parentElement;
-    console.log(grandParent);
+    // localStorage.setItem(heartNumber,"red");        
     const imgUrl=grandParent.querySelector('.fav-img img').src;
     const removeIndex=favItems.findIndex(item=>{
            return item.bgImgUrl==imgUrl;
     });
-    favItems.splice(removeIndex,1);
-    localStorage.setItem('FAVOURITES', JSON.stringify(favItems));
+    const heartId="heart"+favItems[removeIndex].productId.slice(3);
+    localStorage.setItem(heartId,"none");
 
+    localStorage.setItem('FAVOURITES', JSON.stringify(favItems));
+    favItems.splice(removeIndex,1);
     populateWishList(favItems, favList);
 
     ifEmptywishlist();

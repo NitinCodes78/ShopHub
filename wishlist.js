@@ -6,8 +6,12 @@ for(let i=1; i<=55;i++){
      continue;
    const product=document.querySelector(`.product#id-${i}`);
    const img=product.querySelector('.heart img');
-   img.src = 'Images/red-heart.png';
+   if(heartColor==='red'){
+      img.src = 'Images/red-heart.png';
+   }else{
+      img.src='Images/black-heart.png';
    }
+}
 hrtIcons.forEach(icon => {
     icon.addEventListener('click',(e)=>{
         e.target.src = 'Images/red-heart.png';
