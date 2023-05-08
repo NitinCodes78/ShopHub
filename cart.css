@@ -90,6 +90,10 @@ input[type=number]::-webkit-outer-spin-button {
     cursor:pointer;
 } 
 
+.img .delete:hover{
+    scale: 1.5;
+}
+
 .cart-footer{
     background-color: var(--dark-green);
     color: white;

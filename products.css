@@ -23,6 +23,11 @@
     display: none;
     cursor: pointer;
 }
+
+.icon:hover{
+    scale: 1.5;
+
+}
 .filters{
     display: flex;
     justify-content: space-between;

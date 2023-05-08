@@ -304,6 +304,11 @@ body{
     height:2rem;
 }
 
+.icon:hover{
+    scale: 1.5;
+
+}
+
 /*Responsiveness for categories and popular products*/
 @media only screen and (max-width:1300px){
     .popularProducts{
