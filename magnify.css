@@ -43,3 +43,11 @@ body{
 
 /*`````````````````````````````````````````````````````````````*/
 
+@media only screen and (max-width : 930px){
+
+.magnify .lightbox img{
+    width: 75vw;
+    height: auto;
+}
+
+}
