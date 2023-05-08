@@ -61,6 +61,7 @@ function favouriteCartAdd(e){
 /*````````````````````````````````````````````````````````````````````````````````````````` */
 function removeFav(e){
     const grandParent=e.target.parentElement.parentElement;
+    console.log(grandParent);
     const imgUrl=grandParent.querySelector('.fav-img img').src;
     const removeIndex=favItems.findIndex(item=>{
            return item.bgImgUrl==imgUrl;
