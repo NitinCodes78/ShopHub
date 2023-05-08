@@ -73,9 +73,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     padding: 1rem;
-    width: 40vw ;
+    width: 45rem ;
     text-align: left;
     position: relative;
     border-radius: 1rem;
@@ -119,4 +119,36 @@ body{
 }
 .success-msg .close-msg img:hover{
     scale: 1.2;
+}
+
+
+/*`````````````````````````````````````````````````````````````*/
+
+@media only screen and (max-width : 770px){
+.msg-lightbox{
+    flex-direction: column;
+    width: 80vw;
+    padding: 2rem;
+    
+}
+
+.msg-lightbox .prod-img img{
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid black;
+}
+
+.msg-lightbox .msg{
+    font-size: 1.5rem;
+    text-align: center;
+    
+}
+
+.msg-lightbox .view-cart{
+    width: 100%;
+    text-align: center;
+
+}
+
+
 }
