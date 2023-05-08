@@ -58,16 +58,6 @@ favToCartBtns.forEach(btn=>{
         localStorage.setItem('CART-ITEMS', JSON.stringify(cartItems));
 
         removeFav(e);
-
-/*      favItems.splice(removeIndex,1);
-        localStorage.setItem('FAVOURITES', JSON.stringify(favItems));
-        populateWishList(favItems, favList);
-        ifEmptywishlist(); */
-
-/*      const removeIcons = [...document.querySelectorAll('.remove-fav')];
-        removeIcons.forEach(icon => {
-        icon.addEventListener("click", removeFav); */
-        
     })
 });
 
@@ -86,7 +76,7 @@ function removeFav(e){
     populateWishList(favItems, favList);
 
     ifEmptywishlist();
-
+    const favToCartBtns = [...document.querySelectorAll('.add-btn')];
     const removeIcons = [...document.querySelectorAll('.remove-fav')];
     removeIcons.forEach(icon => {
     icon.addEventListener("click", removeFav);
