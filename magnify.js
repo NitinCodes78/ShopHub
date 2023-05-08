@@ -9,7 +9,6 @@ magnifyIcons.forEach(icon =>{
         const bgImgUrl = styles.backgroundImage.slice(4, -1).replace(/"/g, "");
 
         magnify.style.display = 'flex';
-        console.log(magnify.querySelector('.lightbox img'));
         magnify.querySelector('.lightbox img').src = bgImgUrl;
     })
 })

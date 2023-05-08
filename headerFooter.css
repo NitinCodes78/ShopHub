@@ -61,6 +61,10 @@ nav .cross{
     display: none;
 }
 
+nav .cross img{
+    height: 2rem;
+}
+
 nav .hamburger{
     display: none;
 }
