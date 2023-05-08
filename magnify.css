@@ -1,0 +1,45 @@
+/*````````````````MAGNIFY IMAGE`````````````````````````*/
+body{
+    position: relative;
+}
+
+.magnify{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0, 0.75);
+    z-index: 100;
+    display: none;
+}
+
+.magnify .lightbox{
+    background-color: white;
+    border-radius: 2rem;
+    padding: 2rem;
+}
+
+.magnify .lightbox img{
+    height: 60vh;
+}
+
+.magnify .close-lightbox img{
+    height: 2rem;
+    cursor: pointer;
+    background-color: white;
+    padding: 0.2rem  0.3rem;
+    border-radius: 0.1rem;
+}
+
+.magnify .close-lightbox img:hover{
+    scale: 1.2;
+}
+
+/*`````````````````````````````````````````````````````````````*/
+
