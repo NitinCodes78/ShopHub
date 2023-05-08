@@ -31,10 +31,16 @@ hrtIcons.forEach(icon => {
             price,
             type
         };
+        const filteredArray=favItems.filter((value)=>{
+              return value.productId===newItem.productId;
+        });
+        if(filteredArray.length===0){
+        console.log(filteredArray);
         favItems.push(newItem);
         localStorage.setItem('FAVOURITES', JSON.stringify(favItems));  
         const heartId="heart"+productId.slice(3);
-        localStorage.setItem(heartId,"red");        
+        localStorage.setItem(heartId,"red"); 
+        } 
     })
 });
  
