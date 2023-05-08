@@ -14,7 +14,7 @@ function ifEmptywishlist(){
 }
 ifEmptywishlist();
 
-/*````````````````````````````````````````````````````````````````````````````````````````` */
+/*`````````````````````````````````````````````````````````````````````````````````````` */
 function populateWishList(products, productList) {   
     productList.innerHTML = products.map((product, i) => {
         return `
@@ -34,7 +34,7 @@ function populateWishList(products, productList) {
 populateWishList(favItems, favList);
 
 
-/*`````````````````````````````````FAV TO CART``````````````````````````````````````````````` */
+/*``````````````````````````````FAV TO CART```````````````````````````````````````````` */
 const favToCartBtns = [...document.querySelectorAll('.add-btn')];
 favToCartBtns.forEach(btn=> btn.addEventListener('click',favouriteCartAdd));
 function favouriteCartAdd(e){
@@ -58,21 +58,18 @@ function favouriteCartAdd(e){
     
             removeFav(e);
     };
-/*````````````````````````````````````````````````````````````````````````````````````````` */
+/*`````````````````````````````````````````````````````````````````````````````````````` */
 function removeFav(e){
     const grandParent=e.target.parentElement.parentElement;
-    // localStorage.setItem(heartNumber,"red");        
     const imgUrl=grandParent.querySelector('.fav-img img').src;
     const removeIndex=favItems.findIndex(item=>{
            return item.bgImgUrl==imgUrl;
     });
     const heartId="heart"+favItems[removeIndex].productId.slice(3);
-    localStorage.setItem(heartId,"none");
-
-    localStorage.setItem('FAVOURITES', JSON.stringify(favItems));
+    localStorage.setItem(heartId,"black");
     favItems.splice(removeIndex,1);
+    localStorage.setItem('FAVOURITES', JSON.stringify(favItems));
     populateWishList(favItems, favList);
-
     ifEmptywishlist();
     const favToCartBtns = [...document.querySelectorAll('.add-btn')];
     favToCartBtns.forEach(btn=> btn.addEventListener('click',favouriteCartAdd));  
@@ -83,6 +80,5 @@ function removeFav(e){
 }
 const removeIcons = [...document.querySelectorAll('.remove-fav')];
 removeIcons.forEach(icon => {
-     icon.addEventListener("click", removeFav);
+     icon.addEventListener("click", removeFav);
 });
-

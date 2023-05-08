@@ -1,17 +1,18 @@
 const hrtIcons = [...document.querySelectorAll('.heart')];
 let favItems = JSON.parse(localStorage.getItem('FAVOURITES')) || [];
 for(let i=1; i<=55;i++){
-   let heartColor=localStorage.getItem(`heart${i}`);
-   if(heartColor===null)
-     continue;
-   const product=document.querySelector(`.product#id-${i}`);
-   const img=product.querySelector('.heart img');
-   if(heartColor==='red'){
-      img.src = 'Images/red-heart.png';
-   }else{
-      img.src='Images/black-heart.png';
-   }
-}
+    let heartColor=localStorage.getItem(`heart${i}`);
+    if(heartColor===null)
+      continue;
+    const product=document.querySelector(`.product#id-${i}`);
+    const img=product.querySelector('.heart img');
+    if(heartColor==="red"){
+       img.src = 'Images/red-heart.png';
+    }else if(heartColor==="black"){
+       img.src='images/black-heart.png';
+    }
+ }
+
 hrtIcons.forEach(icon => {
     icon.addEventListener('click',(e)=>{
         e.target.src = 'Images/red-heart.png';
@@ -32,10 +33,10 @@ hrtIcons.forEach(icon => {
         };
         favItems.push(newItem);
         localStorage.setItem('FAVOURITES', JSON.stringify(favItems));  
-        const heartNumber="heart"+productId.slice(3);
-        localStorage.setItem(heartNumber,"red");        
-    })
+        const heartId="heart"+productId.slice(3);
+        localStorage.setItem(heartId,"red");        
+    })
 });
-
+ 
 
 
