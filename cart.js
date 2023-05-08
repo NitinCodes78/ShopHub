@@ -20,9 +20,19 @@ cartIcons.forEach(icon => {
             type
         };
         cartItems.push(newItem);
-        localStorage.setItem('CART-ITEMS', JSON.stringify(cartItems));   
+        localStorage.setItem('CART-ITEMS', JSON.stringify(cartItems));
+        
+        successMsg.style.display = 'flex';
+        successMsg.querySelector('.prod-img img').src = bgImgUrl;
         
     })
 });
+
+/*````````````SUCCESSFULLY ADDED TO CART MSG````````````````````*/
+const closeMsg = document.querySelector('.close-msg');
+const successMsg = document.querySelector('.success-msg');
+
+
+closeMsg.addEventListener('click',() => successMsg.style.display = 'none' );
 
 

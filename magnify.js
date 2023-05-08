@@ -14,3 +14,5 @@ magnifyIcons.forEach(icon =>{
 })
 
 closeLightbox.addEventListener('click',()=> magnify.style.display = 'none' );
+
+
