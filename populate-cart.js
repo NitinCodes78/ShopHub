@@ -19,7 +19,7 @@ ifEmpty();
 function populateList(products, productList) {   //products will be an array of objects
     productList.innerHTML = products.map((product, i) => {
         return `
-        <li>
+        <li data-type=${product.type}>
             <div class="img">
                 <img src=${product.bgImgUrl} class="product-img">
                 <img src="/images/icons/icon-close.svg" class="delete">
@@ -41,6 +41,16 @@ function populateList(products, productList) {   //products will be an array of 
     }).join('');
 }
 
+
+/*````````````HIDE SIZE OPTION FOR ACCESSORIES`````````````````` */
+
+const liItems = [...document.querySelectorAll('.items-list li')] ;
+
+liItems.forEach(li =>{
+    const sizeOption = li.querySelector('.quanSize select');
+    if(li.dataset.type == 'accessories') sizeOption.style.display = 'none';
+    else return;
+})
 
 /*````````````````````QUANTITY X PRICE``````````````````````````` */
 
