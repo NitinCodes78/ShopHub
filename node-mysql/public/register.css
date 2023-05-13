@@ -1,7 +1,9 @@
 .container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
     width: 100vw;
     height: 90vh;
 }
@@ -16,7 +18,7 @@
 }
 
 .header-body{
-    padding: 2rem;
+    padding: 1rem 2rem;
 }
 
 .header-body form{
