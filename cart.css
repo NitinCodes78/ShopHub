@@ -94,6 +94,44 @@ input[type=number]::-webkit-outer-spin-button {
     scale: 1.5;
 }
 
+.payment-container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pay-now{
+    margin-top: 3rem;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.pay-now .main-heading{
+    background-color: var(--dark-green);
+    color: white;
+    font-weight: 700;
+    width: 100%;
+    padding-block: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.pay-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem 1rem;
+}
+
+.pay-details.total{
+    font-weight: 700;
+    padding: 0.2rem 1rem;
+    margin-bottom: 1rem;
+}
+
 .cart-footer{
     background-color: var(--dark-green);
     color: white;

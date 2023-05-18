@@ -1,15 +1,20 @@
 const itemList = document.querySelector('.items-list');
 const cartTable = document.querySelector('.items-table');
 const emptycart = document.querySelector('.empty-cart');
+const payNow = document.querySelector('.pay-now');
+const payableAmt = document.querySelector('.pay-now .amount');
+const totalPayableAmt = document.querySelector('.pay-now .total-amount');
 
 function ifEmpty(){
     if(cartItems.length == 0){
         emptycart.style.display = 'flex';    
         cartTable.style.display = 'none';    
+        payNow.style.display = 'none';    
     } 
     else{
         emptycart.style.display = 'none';    
         cartTable.style.display = 'block';   
+        payNow.style.display = 'flex';   
         populateList(cartItems, itemList);
     }
 }
@@ -89,6 +94,8 @@ finalPrices.forEach(price => {
 
 const numericSubtotal = numericPrices.reduce((sum,price)=> sum+price);
 subtotal.innerText =  `₹ ${numericSubtotal}`;
+payableAmt.innerText =  `₹ ${numericSubtotal}`;
+totalPayableAmt.innerText =  `₹ ${numericSubtotal +50}`;
 
 }
 computeSubtotal()
