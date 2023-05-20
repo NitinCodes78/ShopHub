@@ -5,6 +5,16 @@ const payNow = document.querySelector('.pay-now');
 const payableAmt = document.querySelector('.pay-now .amount');
 const totalPayableAmt = document.querySelector('.pay-now .total-amount');
 
+
+/*````````````````````FOR PAYMENT GATEWAY```````````````````````````*/
+let numericAmt = totalPayableAmt.textContent.slice(2);
+localStorage.setItem('PAYABLE-AMOUNT', numericAmt );
+
+document.querySelector('.paynow-btn').addEventListener('click',() => {
+    location.reload();
+})
+/*`````````````````````````````````````````````````````````````````*/
+
 function ifEmpty(){
     if(cartItems.length == 0){
         emptycart.style.display = 'flex';    
@@ -29,7 +39,7 @@ function populateList(products, productList) {   //products will be an array of 
                 <img src=${product.bgImgUrl} class="product-img">
                 <img src="/images/icons/icon-close.svg" class="delete">
             </div>
-            <div class="price">₹ ${product.price}</div>
+            <div class="price">$ ${product.price}</div>
             <div class = "quanSize">
                 <div class="quantity"> <input type="number" min="1" value="1"> </div>
                 <select name="size">
@@ -40,7 +50,7 @@ function populateList(products, productList) {   //products will be an array of 
                     <option value="xxl">XXL</option>
                 </select>
             </div>
-            <div class="total-amt">₹ ${product.price}</div>
+            <div class="total-amt">$ ${product.price}</div>
         </li> 
         `;
     }).join('');
@@ -69,7 +79,7 @@ quanInputs.forEach(input =>{
         let price = parseInt(target.querySelector('.price').innerText.slice(2));
         let totalAmount = target.querySelector('.total-amt');        
         
-        totalAmount.innerText =  `₹ ${price * quantity}`;
+        totalAmount.innerText =  `$ ${price * quantity}`;
 
 
         computeSubtotal() 
@@ -93,10 +103,12 @@ finalPrices.forEach(price => {
 })
 
 const numericSubtotal = numericPrices.reduce((sum,price)=> sum+price);
-subtotal.innerText =  `₹ ${numericSubtotal}`;
-payableAmt.innerText =  `₹ ${numericSubtotal}`;
-totalPayableAmt.innerText =  `₹ ${numericSubtotal +50}`;
+subtotal.innerText =  `$ ${numericSubtotal}`;
+payableAmt.innerText =  `$ ${numericSubtotal}`;
+totalPayableAmt.innerText =  `$ ${numericSubtotal +50}`;
 
+numericAmt = totalPayableAmt.textContent.slice(2);
+localStorage.setItem('PAYABLE-AMOUNT', numericAmt );
 }
 computeSubtotal()
 
@@ -110,6 +122,7 @@ function removeItem(e){
         });
         cartItems.splice(removeIndex,1);
         localStorage.setItem('CART-ITEMS', JSON.stringify(cartItems));
+
         
         populateList(cartItems,itemList);
         finalPrices=[...document.querySelectorAll('.total-amt')];
@@ -132,7 +145,4 @@ function removeItem(e){
     removeArray.forEach(remove => {
          remove.addEventListener("click", removeItem);
     });
-
-
-
 

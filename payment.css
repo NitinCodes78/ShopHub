@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#paypal-button{
+    width: 60%;
+}
+
+.payment-heading{
+    font-size: max(2rem, 3vw);
+    font-weight: 700;
+}
+
+.choose{
+    font-weight: 500;
+}

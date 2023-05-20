@@ -132,6 +132,22 @@ input[type=number]::-webkit-outer-spin-button {
     margin-bottom: 1rem;
 }
 
+.paynow-btn{
+    margin-bottom: 1.5rem;
+    width: 80%;
+    padding-block: 1rem;
+    background-color: var(--dark-green);
+    font-weight: 700;
+    border-radius: 0.5rem;
+    cursor: pointer; 
+    color: white;
+    text-decoration: none;
+}
+
+.paynow-btn:hover{
+    opacity: 0.7;
+}
+
 .cart-footer{
     background-color: var(--dark-green);
     color: white;
@@ -238,6 +254,14 @@ input[type=number]::-webkit-outer-spin-button {
 .cart-footer{
     grid-template-columns: repeat(2,1fr);
 }
+.payment-container{
+    justify-content: center;
+}
+
+.pay-now{
+    width: 90%;
+}
+
 
 
 }
