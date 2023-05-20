@@ -4,11 +4,15 @@
     gap: 1rem;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: auto;
+    background-color: #E3F4F4;
+    padding-block: 10rem;
 }
 
 #paypal-button{
     width: 60%;
+    margin-top: 1rem;
+    z-index: 5;
 }
 
 .payment-heading{
@@ -18,4 +22,19 @@
 
 .choose{
     font-weight: 500;
+}
+
+@media only screen and (max-width : 650px){
+
+    .container{
+        padding-inline: 1rem;
+    }
+
+    
+#paypal-button{
+    width: 90%;
+}
+
+
+
 }

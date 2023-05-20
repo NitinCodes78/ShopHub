@@ -128,12 +128,12 @@ input[type=number]::-webkit-outer-spin-button {
 
 .pay-details.total{
     font-weight: 700;
-    padding: 0.2rem 1rem;
-    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+   
 }
 
 .paynow-btn{
-    margin-bottom: 1.5rem;
+    margin-block: 1rem 1.5rem;
     width: 80%;
     padding-block: 1rem;
     background-color: var(--dark-green);

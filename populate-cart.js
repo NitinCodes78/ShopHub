@@ -4,6 +4,7 @@ const emptycart = document.querySelector('.empty-cart');
 const payNow = document.querySelector('.pay-now');
 const payableAmt = document.querySelector('.pay-now .amount');
 const totalPayableAmt = document.querySelector('.pay-now .total-amount');
+const freeDelivery = document.querySelector('.pay-now .free-delivery');
 
 
 /*````````````````````FOR PAYMENT GATEWAY```````````````````````````*/
@@ -103,10 +104,17 @@ finalPrices.forEach(price => {
 })
 
 const numericSubtotal = numericPrices.reduce((sum,price)=> sum+price);
-subtotal.innerText =  `$ ${numericSubtotal}`;
-payableAmt.innerText =  `$ ${numericSubtotal}`;
-totalPayableAmt.innerText =  `$ ${numericSubtotal +50}`;
+subtotal.textContent =  `$ ${numericSubtotal}`;
+payableAmt.textContent =  `$ ${numericSubtotal}`;
 
+if(numericSubtotal >10000){
+    freeDelivery.textContent = '- $50';
+    totalPayableAmt.textContent =  `$ ${numericSubtotal}`;
+}
+else{
+    freeDelivery.textContent = 'N.A.';
+    totalPayableAmt.textContent =  `$ ${numericSubtotal +50}`;
+}
 numericAmt = totalPayableAmt.textContent.slice(2);
 localStorage.setItem('PAYABLE-AMOUNT', numericAmt );
 }
